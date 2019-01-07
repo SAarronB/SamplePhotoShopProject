@@ -128,7 +128,23 @@ public class Picture extends SimplePicture
     } 
   }
   
-  public void mirrorVerticalRL()
+  public void mirrorHorizontal() {
+	  Pixel[][] pixels = this.getPixels2D();
+	  Pixel upPixel = null;
+	  Pixel downPixel = null;
+	    int height = pixels.length;
+	    for (int col = 0; col < pixels[0].length; col++)
+	    {
+	      for (int row = 0; row < height / 2; row++)
+	      {
+	        upPixel = pixels[row][col];
+	        downPixel = pixels [height - 1 - row][col];
+	        downPixel.setColor(upPixel.getColor());
+	      }
+	    }  
+  }
+  
+  public void mirrorVerticalRToL()
   {
     Pixel[][] pixels = this.getPixels2D();
     Pixel rightPixel = null;
@@ -155,10 +171,10 @@ public class Picture extends SimplePicture
     Pixel[][] pixels = this.getPixels2D();
     
     // loop through the rows
-    for (int row = 27; row < 97; row++)
+    for (int row = 87; row < 97; row++)
     {
       // loop from 13 to just before the mirror point
-      for (int col = 13; col < mirrorPoint; col++)
+      for (int col = 23; col < mirrorPoint; col++)
       {
         
         leftPixel = pixels[row][col];      

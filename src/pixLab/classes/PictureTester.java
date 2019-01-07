@@ -18,6 +18,13 @@ public class PictureTester
     beach.explore();
   }
   
+  public static void testMirrorGull() {
+	  Picture gull = new Picture("seagull.jpg");
+	  gull.explore();
+	  gull.mirrorTemple();
+	  gull.explore();
+  }
+  
   public static void testZeroRed() {
 	  Picture beach = new Picture("beach.jpg");
 	  beach.explore();
@@ -63,6 +70,7 @@ public class PictureTester
     * method in Java */
   public static void main(String[] args)
   {
+	  testMirrorGull();
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
