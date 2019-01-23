@@ -94,7 +94,7 @@ public class Picture extends SimplePicture
     {
       for (Pixel pixelObj : rowArray)
       {
-        pixelObj.setBlue(0);
+        pixelObj.setBlue(250);
       }
     }
   }
@@ -219,18 +219,27 @@ public class Picture extends SimplePicture
   /** Method to create a collage of several pictures */
   public void createCollage()
   {
-    Picture flower1 = new Picture("flower1.jpg");
-    Picture flower2 = new Picture("flower2.jpg");
-    this.copy(flower1,0,0);
-    this.copy(flower2,100,0);
-    this.copy(flower1,200,0);
-    Picture flowerNoBlue = new Picture(flower2);
-    flowerNoBlue.zeroBlue();
-    this.copy(flowerNoBlue,300,0);
-    this.copy(flower1,400,0);
-    this.copy(flower2,500,0);
-    this.mirrorVertical();
-    this.write("collage.jpg");
+	  Picture firstImg = new Picture("RainbowSix.jpg");
+	  Picture secondImg = new Picture("RainbowSix.jpg");
+	  this.copy(firstImg, 486, 345);
+	  Picture firstImgNoBlue = new Picture(firstImg);
+	  firstImgNoBlue.zeroBlue();
+	  this.copy(firstImgNoBlue, 265, 537);
+	  Picture secondImgNoRed = new Picture(secondImg);
+	  firstImgNoBlue.zeroRed();
+	  this.copy(secondImgNoRed, 265, 537);
+//    Picture flower1 = new Picture("RainbowSix.jpg");
+//    Picture flower2 = new Picture("RainbowSix.jpg");
+//    this.copy(flower1,321,645);
+//    this.copy(flower2,100,30);
+//    this.copy(flower1,284,394);
+//    Picture flowerNoBlue = new Picture(flower2);
+//    flowerNoBlue.zeroBlue();
+//    this.copy(flowerNoBlue,300,0);
+//    this.copy(flower1,150,370);
+//    this.copy(flower1, 654, 872);
+//    this.copy(flower2,504,0);
+//    this.write("collage.jpg");
   }
   
   
@@ -306,10 +315,14 @@ public class Picture extends SimplePicture
    */
   public static void main(String[] args) 
   {
-    Picture beach = new Picture("beach.jpg");
-    beach.explore();
-    beach.zeroBlue();
-    beach.explore();
+    Picture RainbowSix = new Picture("RainbowSix.jpg");
+    RainbowSix.explore();
+    RainbowSix.zeroBlue();
+    RainbowSix.zeroRed();
+    RainbowSix.createCollage();
+    RainbowSix.mirrorTemple();
+    RainbowSix.shiftUpDown(2900);
+    RainbowSix.explore();
   }
   
 } // this } is the end of class Picture, put all new methods before this

@@ -12,21 +12,21 @@ public class PictureTester
   /** Method to test zeroBlue */
   public static void testZeroBlue()
   {
-    Picture beach = new Picture("beach.jpg");
+    Picture beach = new Picture("RainbowSix.jpg");
     beach.explore();
     beach.zeroBlue();
     beach.explore();
   }
   
   public static void testMirrorGull() {
-	  Picture gull = new Picture("seagull.jpg");
+	  Picture gull = new Picture("RainbowSix.jpg");
 	  gull.explore();
 	  gull.mirrorTemple();
 	  gull.explore();
   }
   
   public static void testZeroRed() {
-	  Picture beach = new Picture("beach.jpg");
+	  Picture beach = new Picture("RainbowSix.jpg");
 	  beach.explore();
 	  beach.zeroRed();
 	  beach.explore();
