@@ -66,10 +66,23 @@ public class PictureTester
     swan.explore();
   }
   
+  
+  public static void testSteganography() {
+	  Picture source = new Picture("ElonMusk.jpg");
+	  Picture message = new Picture("Sneaky.jpg");
+	  source.explore();
+	  message.explore();
+	  source.hidePicture(message);
+	  source.explore();
+	  source.revealPicture();
+	  source.explore();
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
   {
+	  testSteganography();
 	  testMirrorGull();
     // uncomment a call here to run a test
     // and comment out the ones you don't want

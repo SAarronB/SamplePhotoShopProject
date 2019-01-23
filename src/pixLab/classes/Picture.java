@@ -324,5 +324,27 @@ public class Picture extends SimplePicture
     RainbowSix.shiftUpDown(2900);
     RainbowSix.explore();
   }
+
+public void hidePicture(Picture message)
+{
+	// TODO Auto-generated method stub
+	
+}
+
+public void revealPicture()
+{
+	// TODO Auto-generated method stub
+	Pixel [][] pixels = this.getPixels2D();
+	for(int row = 0; row< pixels.length; row++) {
+		for(int col = 0; col < pixels.length; col++) {
+			if(pixels[row][col].getRed() > 0 && pixels[row][col].getRed() % 2 != 1) {
+				pixels[row][col].setColor(Color.CYAN);
+			}else if (pixels[row][col].getRed() > 0 && pixels[row][col].getRed() % 2 == 1){
+				pixels[row][col].setColor(Color.MAGENTA);
+			}
+		}
+	}
+}
+
   
 } // this } is the end of class Picture, put all new methods before this
