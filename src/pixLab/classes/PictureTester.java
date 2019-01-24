@@ -68,8 +68,8 @@ public class PictureTester
   
   
   public static void testSteganography() {
-	  Picture source = new Picture("ElonMusk.jpg");
-	  Picture message = new Picture("Sneaky.jpg");
+	  Picture source = new Picture("Sneaky.jpg");
+	  Picture message = new Picture("NicolBolas.jpg");
 	  source.explore();
 	  message.explore();
 	  source.hidePicture(message);
@@ -83,18 +83,18 @@ public class PictureTester
   public static void main(String[] args)
   {
 	  testSteganography();
-	  testMirrorGull();
+	//testMirrorGull();
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
-    testZeroBlue();
+    //testZeroBlue();
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
     //testNegate();
     //testGrayscale();
     //testFixUnderwater();
-    testMirrorVertical();
+    //testMirrorVertical();
     //testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();

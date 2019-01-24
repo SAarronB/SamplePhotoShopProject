@@ -325,10 +325,24 @@ public class Picture extends SimplePicture
     RainbowSix.explore();
   }
 
-public void hidePicture(Picture message)
+public void hidePicture(Picture hidden)
 {
 	// TODO Auto-generated method stub
+	Pixel [][] pixels = this.getPixels2D();
+	Pixel[][] hiddenPixels = hidden.getPixels2D();
 	
+	for(int row = 0; row< pixels.length; row++) {
+		for(int col = 0; col < pixels.length; col++) {
+			//There is a message to hide
+			if(hiddenPixels[row][col].colorDistance(Color.CYAN)>5) {
+				if(pixels[row][col].getRed() > 0 && pixels[row][col].getRed() % 2 != 1) {
+					pixels[row][col].setColor(Color.GREEN);
+				}else if (pixels[row][col].getRed() > 0 && pixels[row][col].getRed() % 2 == 1){
+					pixels[row][col].setColor(Color.RED);
+				}
+			}
+		}
+	}
 }
 
 public void revealPicture()
@@ -338,9 +352,9 @@ public void revealPicture()
 	for(int row = 0; row< pixels.length; row++) {
 		for(int col = 0; col < pixels.length; col++) {
 			if(pixels[row][col].getRed() > 0 && pixels[row][col].getRed() % 2 != 1) {
-				pixels[row][col].setColor(Color.CYAN);
+				pixels[row][col].setColor(Color.GREEN);
 			}else if (pixels[row][col].getRed() > 0 && pixels[row][col].getRed() % 2 == 1){
-				pixels[row][col].setColor(Color.MAGENTA);
+				pixels[row][col].setColor(Color.RED);
 			}
 		}
 	}
