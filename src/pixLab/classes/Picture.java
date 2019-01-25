@@ -94,7 +94,7 @@ public class Picture extends SimplePicture
     {
       for (Pixel pixelObj : rowArray)
       {
-        pixelObj.setBlue(250);
+        pixelObj.setBlue(87);
       }
     }
   }
@@ -103,7 +103,7 @@ public class Picture extends SimplePicture
 	  Pixel [][] pixels = this.getPixels2D();
 	  for(Pixel [] row : pixels) {
 		  for(Pixel pix : row) {
-			  pix.setRed(0);
+			  pix.setRed(76);
 		  }
 	  }
   }
@@ -219,7 +219,7 @@ public class Picture extends SimplePicture
   /** Method to create a collage of several pictures */
   public void createCollage()
   {
-	  Picture firstImg = new Picture("RainbowSix.jpg");
+	  Picture firstImg = new Picture("RazerKeyBoard.jpg");
 	  Picture secondImg = new Picture("RainbowSix.jpg");
 	  this.copy(firstImg, 486, 345);
 	  Picture firstImgNoBlue = new Picture(firstImg);
@@ -228,18 +228,7 @@ public class Picture extends SimplePicture
 	  Picture secondImgNoRed = new Picture(secondImg);
 	  firstImgNoBlue.zeroRed();
 	  this.copy(secondImgNoRed, 265, 537);
-//    Picture flower1 = new Picture("RainbowSix.jpg");
-//    Picture flower2 = new Picture("RainbowSix.jpg");
-//    this.copy(flower1,321,645);
-//    this.copy(flower2,100,30);
-//    this.copy(flower1,284,394);
-//    Picture flowerNoBlue = new Picture(flower2);
-//    flowerNoBlue.zeroBlue();
-//    this.copy(flowerNoBlue,300,0);
-//    this.copy(flower1,150,370);
-//    this.copy(flower1, 654, 872);
-//    this.copy(flower2,504,0);
-//    this.write("collage.jpg");
+      this.write("collage.jpg");
   }
   
   
@@ -280,6 +269,9 @@ public class Picture extends SimplePicture
 		  for (int col = 0; col < pixels[0].length; col++) {
 			  shiftedValue = (col + amount) % width;
 			  copied[row][col].setColor(pixels[row][shiftedValue].getColor());
+		  if(amount < 0) {
+			  shiftedValue = ((col + amount) % width + width) % width;
+		  	}copied[row][col].setColor(pixels[row][shiftedValue].getColor());
 		  }
 	  }
 	  for (int row = 0; row < pixels.length; row++) {
@@ -317,11 +309,13 @@ public class Picture extends SimplePicture
   {
     Picture RainbowSix = new Picture("RainbowSix.jpg");
     RainbowSix.explore();
-    RainbowSix.zeroBlue();
     RainbowSix.zeroRed();
     RainbowSix.createCollage();
+    RainbowSix.shiftLeftRight(1800);
     RainbowSix.mirrorTemple();
-    RainbowSix.shiftUpDown(2900);
+    RainbowSix.copy(RainbowSix, 422, 960);
+    RainbowSix.shiftUpDown(9200);
+    RainbowSix.mirrorTemple();
     RainbowSix.explore();
   }
 
