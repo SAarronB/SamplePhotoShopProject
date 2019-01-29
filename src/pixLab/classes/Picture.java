@@ -219,8 +219,8 @@ public class Picture extends SimplePicture
   /** Method to create a collage of several pictures */
   public void createCollage()
   {
-	  Picture firstImg = new Picture("BigChungus.jpg");
-	  Picture secondImg = new Picture("BigChungus.jpg");
+	  Picture firstImg = new Picture("RainbowSix.jpg");
+	  Picture secondImg = new Picture("RainbowSix.jpg");
 	  this.copy(firstImg, 982, 345);
 	  Picture firstImgNoBlue = new Picture(firstImg);
 	  firstImgNoBlue.zeroBlue();
@@ -308,7 +308,7 @@ public class Picture extends SimplePicture
    */
   public static void main(String[] args) 
   {
-    Picture RainbowSix = new Picture("BigChungus.jpg");
+    Picture RainbowSix = new Picture("RainbowSix.jpg");
     RainbowSix.explore();
     RainbowSix.zeroRed();
     RainbowSix.createCollage();
