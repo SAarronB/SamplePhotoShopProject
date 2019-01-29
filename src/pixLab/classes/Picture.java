@@ -308,18 +308,22 @@ public class Picture extends SimplePicture
    */
   public static void main(String[] args) 
   {
-    Picture RainbowSix = new Picture("RainbowSix.jpg");
-    RainbowSix.explore();
-    RainbowSix.zeroRed();
-    RainbowSix.createCollage();
-    RainbowSix.shiftLeftRight(1872);
-    RainbowSix.mirrorTemple();
-    RainbowSix.copy(RainbowSix, 631, 430);
-    RainbowSix.shiftUpDown(3432);
-    RainbowSix.mirrorTemple();
-    RainbowSix.explore();
+	  glich();
   }
 
+  public static void glich() {
+	    Picture RainbowSix = new Picture("RainbowSix.jpg");
+	    RainbowSix.explore();
+	    RainbowSix.zeroRed();
+	    RainbowSix.createCollage();
+	    RainbowSix.shiftLeftRight(1872);
+	    RainbowSix.mirrorTemple();
+	    RainbowSix.copy(RainbowSix, 631, 430);
+	    RainbowSix.shiftUpDown(3432);
+	    RainbowSix.mirrorTemple();
+	    RainbowSix.explore();
+  }
+  
 public void hidePicture(Picture hidden)
 {
 	// TODO Auto-generated method stub
