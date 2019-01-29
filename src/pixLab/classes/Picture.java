@@ -219,15 +219,16 @@ public class Picture extends SimplePicture
   /** Method to create a collage of several pictures */
   public void createCollage()
   {
-	  Picture firstImg = new Picture("RazerKeyBoard.jpg");
-	  Picture secondImg = new Picture("RainbowSix.jpg");
-	  this.copy(firstImg, 486, 345);
+	  Picture firstImg = new Picture("BigChungus.jpg");
+	  Picture secondImg = new Picture("BigChungus.jpg");
+	  this.copy(firstImg, 982, 345);
 	  Picture firstImgNoBlue = new Picture(firstImg);
 	  firstImgNoBlue.zeroBlue();
-	  this.copy(firstImgNoBlue, 265, 537);
-	  Picture secondImgNoRed = new Picture(secondImg);
-	  firstImgNoBlue.zeroRed();
-	  this.copy(secondImgNoRed, 265, 537);
+	  this.copy(firstImgNoBlue, 265, 767);
+//	  Picture secondImgNoRed = new Picture(secondImg);
+//	  this.copy(secondImg, 476, 359);
+//	  firstImgNoBlue.zeroRed();
+//	  this.copy(secondImgNoRed, 265, 537);
       this.write("collage.jpg");
   }
   
@@ -307,14 +308,14 @@ public class Picture extends SimplePicture
    */
   public static void main(String[] args) 
   {
-    Picture RainbowSix = new Picture("RainbowSix.jpg");
+    Picture RainbowSix = new Picture("BigChungus.jpg");
     RainbowSix.explore();
     RainbowSix.zeroRed();
     RainbowSix.createCollage();
-    RainbowSix.shiftLeftRight(1800);
+    RainbowSix.shiftLeftRight(1872);
     RainbowSix.mirrorTemple();
-    RainbowSix.copy(RainbowSix, 422, 960);
-    RainbowSix.shiftUpDown(9200);
+    RainbowSix.copy(RainbowSix, 631, 430);
+    RainbowSix.shiftUpDown(3432);
     RainbowSix.mirrorTemple();
     RainbowSix.explore();
   }
